@@ -40,7 +40,8 @@ public interface NextRTCServer extends Closeable {
         private static Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
 
         public static Message decode(String json) {
-            return gson.fromJson(escapeHtml4(json.replace("\"", "'")), Message.class);
+        	
+            return gson.fromJson(json, Message.class); // TODO handle special character
         }
 
     }

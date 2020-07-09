@@ -28,7 +28,7 @@ public class PingTaskTest extends BaseTest {
 
 
         // when
-        new PingTask(member.getConnection(), sender).run();
+        new PingTask(member.getConnection(), sender,members).run();
 
         // then
         assertThat(messages.getMessage().getSignal(), is(Signals.PING));
@@ -42,7 +42,7 @@ public class PingTaskTest extends BaseTest {
         when(connection.isOpen()).thenReturn(false);
 
         // when
-        new PingTask(connection, sender).run();
+        new PingTask(connection, sender,members).run();
 
         // then
         assertThat(messages.getMessages(), hasSize(0));

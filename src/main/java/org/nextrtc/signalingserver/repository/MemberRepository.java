@@ -4,6 +4,7 @@ import org.nextrtc.signalingserver.domain.Member;
 
 import java.io.Closeable;
 import java.util.Collection;
+import java.util.List;
 import java.util.Optional;
 
 public interface MemberRepository extends Closeable{
@@ -15,4 +16,5 @@ public interface MemberRepository extends Closeable{
 
     void unregister(String id);
 
+    List<Member> getAllMembers();
 }

@@ -6,7 +6,9 @@ import org.nextrtc.signalingserver.domain.Member;
 import org.springframework.stereotype.Repository;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
@@ -57,4 +59,9 @@ public class Members implements MemberRepository {
         }
         members.clear();
     }
+
+	@Override
+	public List<Member> getAllMembers() {
+		return new ArrayList<Member>( this.members.values());
+	}
 }
